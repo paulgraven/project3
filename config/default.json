@@ -1,4 +1,4 @@
 {
-"mongoURI"
-
+"mongoURI": "mongodb+srv://theTribe:pppej@theTribe@tribe-hskrz.mongodb.net/test?retryWrites=true&w=majority",
+"jwtSecret": "sl_myJwtSecret"
 }
