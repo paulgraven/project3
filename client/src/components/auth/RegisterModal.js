@@ -42,7 +42,7 @@ class RegisterModal extends Component {
         this.setState({ msg: null });
       }
     }
-
+    
     // If authenticated, close modal
     if (this.state.modal) {
       if (isAuthenticated) {
@@ -52,7 +52,7 @@ class RegisterModal extends Component {
   }
 
   toggle = () => {
-    // Clear errors
+    // Clears errors
     this.props.clearErrors();
     this.setState({
       modal: !this.state.modal
