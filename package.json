@@ -13,14 +13,16 @@
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.7.7",
     "nodemon": "^1.19.4",
-    "npm": "^6.13.0"
+    "npm": "^6.13.0",
+    "react-scripts": "^3.2.0"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "eject": "react-scripts eject",
+    "client-install": "npm install --prefix client",
+    "start": "node server.js",
     "server": "nodemon server.js",
-    "client": "npm start --prefix client"
+    "client": "npm start --prefix client",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
   },
   "browserslist": {
     "production": [
@@ -33,6 +35,6 @@
       "last 1 firefox version",
       "last 1 safari version"
     ],
-    "proxy": "http://localhost:5000"
+    "proxy": "http://localhost:3000"
   }
 }

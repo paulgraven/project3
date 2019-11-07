@@ -35,7 +35,7 @@ router.post('/', (req, res)=> {
                 newUser.password = hash;
                 newUser.save()
                     .then(user => {
-
+                        //jason web token
                         jwt.sign(
                             { id: user.id },
                             config.get('jwtSecret'),

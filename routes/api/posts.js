@@ -21,7 +21,6 @@ router.post('/', auth, (req, res) => {
   const newPost = new Post({
     name: req.body.id
   });
-
   newPost.save().then(post => res.json(post));
 });
 
