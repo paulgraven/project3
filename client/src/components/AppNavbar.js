@@ -24,25 +24,6 @@ class AppNavbar extends Component {
     auth: PropTypes.object.isRequired
   };
 
-  componentDidUpdate(prevProps) {
-    const { error, isAuthenticated } = this.props;
-    if (error !== prevProps.error) {
-      // Check for register error
-      if (error.id === 'REGISTER_FAIL') {
-        this.setState({ msg: error.msg.msg });
-      } else {
-        this.setState({ msg: null });
-      }
-    }
-
-    // If authenticated, close modal
-    if (this.state.modal) {
-      if (isAuthenticated) {
-        this.toggle();
-      }
-    }
-  }
-
   toggle = () => {
     this.setState({
       isOpen: !this.state.isOpen
@@ -80,7 +61,7 @@ class AppNavbar extends Component {
       <div>
         <Navbar color='dark' dark expand='sm' className='mb-5'>
           <Container>
-            <NavbarBrand href='/'>Tribe</NavbarBrand>
+            <NavbarBrand href='/'>ShoppingList</NavbarBrand>
             <NavbarToggler onClick={this.toggle} />
             <Collapse isOpen={this.state.isOpen} navbar>
               <Nav className='ml-auto' navbar>
