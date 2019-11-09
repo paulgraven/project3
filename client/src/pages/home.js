@@ -3,26 +3,20 @@ import {
     Container,
     Row,
     Col
-} from "reactstrap"
-import AppNavbar from "./components/AppNavbar";
-import Card from "./components/Card"
+} 
+from "reactstrap"
+import Cards from "./components/Cards"
 
-class home extends Component {
+class Home extends Component {
     render() {
         return (
-            <Container>
-                <AppNavbar />
-                <Row>
-                    <Col></Col>
-                </Row>
-                <Row>
-                    <Col>
-                        <Cards />
-                    </Col>
-                </Row>
-            </Container>
-        );
+        <Row>
+            <Col>
+                <h2 id= "welcome-message">Welcom to the Tribe</h2>
+            </Col>
+        </Row>
+        )
     }
 }
 
-export default home;
+export default Home;
