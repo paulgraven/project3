@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component, Fragment } from "react";
 import {
   Collapse,
   Navbar,
@@ -8,12 +8,12 @@ import {
   NavItem,
   NavLink,
   Container
-} from 'reactstrap';
-import { connect } from 'react-redux';
-import PropTypes from 'prop-types';
-import RegisterModal from './auth/RegisterModal';
-import LoginModal from './auth/LoginModal';
-import Logout from './auth/Logout';
+} from "reactstrap";
+import { connect } from "react-redux";
+import PropTypes from "prop-types";
+import RegisterModal from "./auth/RegisterModal";
+import LoginModal from "./auth/LoginModal";
+import Logout from "./auth/Logout";
 
 class AppNavbar extends Component {
   state = {
@@ -36,8 +36,8 @@ class AppNavbar extends Component {
     const authLinks = (
       <Fragment>
         <NavItem>
-          <span className='navbar-text mr-3'>
-            <strong>{user ? `Welcome ${user.name}` : ''}</strong>
+          <span className="navbar-text mr-3">
+            <strong>{user ? `Welcome ${user.name}` : ""}</strong>
           </span>
         </NavItem>
         <NavItem>
@@ -67,12 +67,12 @@ class AppNavbar extends Component {
 
     return (
       <div>
-        <Navbar color='dark' dark expand='sm' className='mb-5'>
+        <Navbar color="dark" dark expand="sm" className="mb-5">
           <Container>
-            <NavbarBrand href='/'>Tribe</NavbarBrand>
+            <NavbarBrand href="/">Tribe</NavbarBrand>
             <NavbarToggler onClick={this.toggle} />
             <Collapse isOpen={this.state.isOpen} navbar>
-              <Nav className='ml-auto' navbar>
+              <Nav className="ml-auto" navbar>
                 {isAuthenticated ? authLinks : guestLinks}
               </Nav>
             </Collapse>
