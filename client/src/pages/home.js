@@ -7,7 +7,7 @@ class home extends Component {
     return (
       <Container>
         <Row>
-          <Col></Col>
+          <Col>Welocme to the Tribe</Col>
         </Row>
         <Row>
           <Col>
