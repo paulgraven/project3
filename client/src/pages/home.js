@@ -1,22 +1,21 @@
-import React, { Component } from 'react';
-import {
-    Container,
-    Row,
-    Col
-} 
-from "reactstrap"
-import Cards from "./components/Cards"
-
-class Home extends Component {
-    render() {
-        return (
+import React, { Component } from "react";
+import { Container, Row, Col } from "reactstrap";
+//import AppNavbar from "./components/AppNavbar";
+import Cards from "../components/Cards/Cards";
+class home extends Component {
+  render() {
+    return (
+      <Container>
         <Row>
-            <Col>
-                <h2 id= "welcome-message">Welcom to the Tribe</h2>
-            </Col>
+          <Col></Col>
         </Row>
-        )
-    }
+        <Row>
+          <Col>
+            <Cards />
+          </Col>
+        </Row>
+      </Container>
+    );
+  }
 }
-
-export default Home;
+export default home;
