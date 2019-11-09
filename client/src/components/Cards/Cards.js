@@ -16,9 +16,12 @@ const Cards = props => {
       <Row>
         <Col>
           <Card>
-            <CardHeader></CardHeader>
+            <CardHeader>
+              <h2>{props.city}</h2>
+              <h3>{props.city}</h3>
+            </CardHeader>
             <CardImg></CardImg>
-            <CardText></CardText>
+            <CardText>{props.description}</CardText>
             <Button className="likebtn"></Button>
           </Card>
         </Col>
