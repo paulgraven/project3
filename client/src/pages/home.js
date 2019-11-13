@@ -1,28 +1,7 @@
-import React, { Component } from 'react';
-import {
-    Container,
-    Row,
-    Col
-} from "reactstrap"
-import AppNavbar from "./components/AppNavbar";
-import Card from "./components/Card"
+import React from "react";
 
-class home extends Component {
-    render() {
-        return (
-            <Container>
-                <AppNavbar />
-                <Row>
-                    <Col></Col>
-                </Row>
-                <Row>
-                    <Col>
-                        <Cards />
-                    </Col>
-                </Row>
-            </Container>
-        );
-    }
-}
+const Home = () => {
+  return <div></div>;
+};
 
-export default home;
+export default Home;

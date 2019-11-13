@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 import {
   Button,
   Modal,
@@ -8,15 +8,18 @@ import {
   FormGroup,
   Label,
   Input
-} from 'reactstrap';
-import { connect } from 'react-redux';
-import { addPost } from '../actions/postActions';
-import PropTypes from 'prop-types';
+} from "reactstrap";
+import { connect } from "react-redux";
+import { addPost } from "../actions/postActions";
+import PropTypes from "prop-types";
 
 class PostModal extends Component {
   state = {
     modal: false,
-    name: ''
+    city: "",
+    country: "",
+    photo: "",
+    description: ""
   };
 
   static propTypes = {
@@ -30,6 +33,7 @@ class PostModal extends Component {
   };
 
   onChange = e => {
+    console.log(e.target.name);
     this.setState({ [e.target.name]: e.target.value });
   };
 
@@ -37,9 +41,12 @@ class PostModal extends Component {
     e.preventDefault();
 
     const newPost = {
-      name: this.state.name
+      city: this.state.city,
+      country: this.state.country,
+      photo: this.state.photo,
+      description: this.state.description
     };
-
+    console.log(newPost);
     // Add post via addPost action
     this.props.addPost(newPost);
 
@@ -52,14 +59,14 @@ class PostModal extends Component {
       <div>
         {this.props.isAuthenticated ? (
           <Button
-            color='dark'
-            style={{ marginBottom: '2rem' }}
+            color="dark"
+            style={{ marginBottom: "2rem" }}
             onClick={this.toggle}
           >
             Add Post
           </Button>
         ) : (
-          <h4 className='mb-3 ml-4'>Please log in to manage posts</h4>
+          <h4 className="mb-3 ml-4">Please log in to manage posts</h4>
         )}
 
         <Modal isOpen={this.state.modal} toggle={this.toggle}>
@@ -67,15 +74,46 @@ class PostModal extends Component {
           <ModalBody>
             <Form onSubmit={this.onSubmit}>
               <FormGroup>
-                <Label for='post'>Post</Label>
+                <Label for="country">Country</Label>
                 <Input
-                  type='text'
-                  name='post'
-                  id='post'
-                  placeholder='post photo'
+                  type="text"
+                  name="country"
+                  id="country"
+                  placeholder="Country visited"
                   onChange={this.onChange}
                 />
-                <Button color='dark' style={{ marginTop: '2rem' }} block>
+                <br />
+                <Label for="city">City</Label>
+                <Input
+                  type="text"
+                  name="city"
+                  id="city"
+                  placeholder="City visited"
+                  onChange={this.onChange}
+                />
+                <br />
+
+                <Label for="photo">Photos</Label>
+                <Input
+                  type="text"
+                  name="photo"
+                  id="photo"
+                  placeholder="Link to photo(s)"
+                  onChange={this.onChange}
+                />
+                <br />
+
+                <Label for="description">Description of trip</Label>
+                <Input
+                  type="text"
+                  name="description"
+                  id="description"
+                  placeholder="What was your favorite part??"
+                  onChange={this.onChange}
+                />
+                <br />
+
+                <Button color="dark" style={{ marginTop: "2rem" }} block>
                   Post Photo
                 </Button>
               </FormGroup>
@@ -88,11 +126,8 @@ class PostModal extends Component {
 }
 
 const mapStateToProps = state => ({
-  item: state.post,
+  post: state.post,
   isAuthenticated: state.auth.isAuthenticated
 });
 
-export default connect(
-  mapStateToProps,
-  { addPost }
-)(PostModal);
+export default connect(mapStateToProps, { addPost })(PostModal);
