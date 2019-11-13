@@ -8,7 +8,7 @@ import store from './store';
 import { loadUser } from './actions/authActions';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { BrowserRouter as Router, Route } from "react-router-dom";
+//import { BrowserRouter as Router, Route } from "react-router-dom";
 
 
 import Home from "./pages/Home"
@@ -21,16 +21,14 @@ class App extends Component {
 
   render() {
     return (
-    <Router>
+    
       <Provider store={store}>
         <div className='App'>
           <AppNavbar />
           <Container>
-            <Route exact path="/" component={Home}/>
           </Container>
         </div>
       </Provider>
-    </Router>
     );
   }
 }
