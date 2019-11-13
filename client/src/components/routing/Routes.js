@@ -14,7 +14,7 @@ const Routes = () => {
         <section className="container">
             <Switch>
                 <Route exact path="/" component={Home} />
-                <Route exact path="/" component={Dashboard} />
+                <Route exact path="/profile/:id" component={Dashboard} />
             </Switch>
         </section>
     );
