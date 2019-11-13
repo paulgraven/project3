@@ -1,13 +1,18 @@
 import React, { Component } from 'react';
-import AppNavbar from './components/AppNavbar';
-// import PostModal from './components/PostModal';
-import { Container } from 'reactstrap';
-
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import store from './store';
 import { loadUser } from './actions/authActions';
-
 import 'bootstrap/dist/css/bootstrap.min.css';
+
+//pages: 
+import Routes from './components/routing/Routes';
+
+//components:
+import AppNavbar from './components/AppNavbar';
+import { Container } from 'reactstrap';
+// import PostModal from './components/PostModal';
+
 // import './App.css';
 
 class App extends Component {
@@ -17,14 +22,16 @@ class App extends Component {
 
   render() {
     return (
+    
       <Provider store={store}>
-        <div className='App'>
-          <AppNavbar />
+        <Router>
           <Container>
-            {/* <ItemModal /> */}
-            {/* <ShoppingList /> */}
+            <AppNavbar />
+            <Switch>
+            <Route component={Routes} />
+            </Switch>
           </Container>
-        </div>
+        </Router>
       </Provider>
     );
   }
