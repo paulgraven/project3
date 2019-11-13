@@ -43,6 +43,14 @@ class AppNavbar extends Component {
         <NavItem>
           <Logout />
         </NavItem>
+        <NavItem>
+          <NavLink to="/"
+              className={
+                window.location.pathname === "/dashboard" || window.location.pathname === "/dashboard"
+                  ? "nav-link active"
+                  : "nav-link"
+              }>My Profile</NavLink>
+        </NavItem>
       </Fragment>
     );
 

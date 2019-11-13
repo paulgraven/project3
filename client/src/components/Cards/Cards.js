@@ -17,11 +17,11 @@ const Cards = props => {
         <Col>
           <Card>
             <CardHeader>
-              <h2>{props.city}</h2>
-              <h3>{props.city}</h3>
+              <h2>{}</h2>
+              <h3>{}</h3>
             </CardHeader>
             <CardImg></CardImg>
-            <CardText>{props.description}</CardText>
+            <CardText>{}</CardText>
             <Button className="likebtn"></Button>
           </Card>
         </Col>
