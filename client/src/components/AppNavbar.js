@@ -44,12 +44,17 @@ class AppNavbar extends Component {
           <Logout />
         </NavItem>
         <NavItem>
-          <NavLink to="/"
-              className={
-                window.location.pathname === "/dashboard" || window.location.pathname === "/dashboard"
-                  ? "nav-link active"
-                  : "nav-link"
-              }>My Profile</NavLink>
+          <NavLink
+            to="/"
+            className={
+              window.location.pathname === "/dashboard" ||
+              window.location.pathname === "/dashboard"
+                ? "nav-link active"
+                : "nav-link"
+            }
+          >
+            My Profile
+          </NavLink>
         </NavItem>
       </Fragment>
     );
@@ -87,7 +92,4 @@ const mapStateToProps = state => ({
   auth: state.auth
 });
 
-export default connect(
-  mapStateToProps,
-  null
-)(AppNavbar);
+export default connect(mapStateToProps, null)(AppNavbar);
