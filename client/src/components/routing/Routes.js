@@ -5,7 +5,7 @@ import { Route, Switch } from 'react-router-dom';
 //import homepage components 
 import Home from "./pages/Home"
 //import userdash components 
-import Dashboard from "./pages/Dashboard"
+import Dashboard from "../pages/Dashboard"
 //import private route 
 
 
@@ -14,7 +14,7 @@ const Routes = () => {
         <section className="container">
             <Switch>
                 <Route exact path="/" component={Home} />
-                <Route exact path="/profile/:id" component={Dashboard} />
+                <Route exact path="/Dashboard/:id" component={Dashboard} />
             </Switch>
         </section>
     );
