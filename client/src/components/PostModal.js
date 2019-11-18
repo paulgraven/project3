@@ -56,7 +56,6 @@ class PostModal extends Component {
   };
 
   render() {
-    const { user } = this.props.auth;
     return (
       <div>
         {this.props.isAuthenticated ? (
