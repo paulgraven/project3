@@ -19,10 +19,12 @@ class PostModal extends Component {
     city: "",
     country: "",
     photo: "",
-    description: ""
+    description: "",
+    user: ""
   };
 
   static propTypes = {
+    auth: PropTypes.object.isRequired,
     isAuthenticated: PropTypes.bool
   };
 
@@ -44,17 +46,17 @@ class PostModal extends Component {
       city: this.state.city,
       country: this.state.country,
       photo: this.state.photo,
-      description: this.state.description
+      description: this.state.description,
+      user: this.props.auth.user
     };
-    console.log(newPost);
-    // Add post via addPost action
-    this.props.addPost(newPost);
 
-    // Close modal
+    console.log(newPost); // Add post via addPost action
+    this.props.addPost(newPost); // Close modal
     this.toggle();
   };
 
   render() {
+    const { user } = this.props.auth;
     return (
       <div>
         {this.props.isAuthenticated ? (
@@ -70,8 +72,9 @@ class PostModal extends Component {
         )}
 
         <Modal isOpen={this.state.modal} toggle={this.toggle}>
-          <ModalHeader toggle={this.toggle}>Post a Photo</ModalHeader>
+          <ModalHeader toggle={this.toggle}>Post a Trip!</ModalHeader>
           <ModalBody>
+            <div id="user"></div>
             <Form onSubmit={this.onSubmit}>
               <FormGroup>
                 <Label for="country">Country</Label>
@@ -83,6 +86,7 @@ class PostModal extends Component {
                   onChange={this.onChange}
                 />
                 <br />
+
                 <Label for="city">City</Label>
                 <Input
                   type="text"
@@ -114,7 +118,7 @@ class PostModal extends Component {
                 <br />
 
                 <Button color="dark" style={{ marginTop: "2rem" }} block>
-                  Post Photo
+                  Click here to post your trip
                 </Button>
               </FormGroup>
             </Form>
@@ -127,6 +131,7 @@ class PostModal extends Component {
 
 const mapStateToProps = state => ({
   post: state.post,
+  auth: state.auth,
   isAuthenticated: state.auth.isAuthenticated
 });
 
