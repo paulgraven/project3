@@ -4,7 +4,7 @@ import { Route, Switch } from "react-router-dom";
 import Post from "../../../src/components/Post";
 
 //import homepage components
-import Home from "../../pages/Home";
+import Home from "../../pages/home";
 //import userdash components
 import Dashboard from "../../pages/Dashboard";
 //import private route

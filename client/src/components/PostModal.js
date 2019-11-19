@@ -16,6 +16,7 @@ import PropTypes from "prop-types";
 class PostModal extends Component {
   state = {
     modal: false,
+    id: "",
     city: "",
     country: "",
     photo: "",
