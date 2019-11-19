@@ -25,8 +25,7 @@ router.post("/", auth, (req, res) => {
     city: req.body.city,
     photo: req.body.photo,
     description: req.body.description,
-    user: user.id,
-    name: user.name
+    user: req.body.user
   });
   newPost.save().then(
     post => res.json(post)
