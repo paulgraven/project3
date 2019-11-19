@@ -16,6 +16,7 @@ import PropTypes from "prop-types";
 class PostModal extends Component {
   state = {
     modal: false,
+    id: "",
     city: "",
     country: "",
     photo: "",
@@ -44,7 +45,8 @@ class PostModal extends Component {
       city: this.state.city,
       country: this.state.country,
       photo: this.state.photo,
-      description: this.state.description
+      description: this.state.description,
+      id: this.state.id
     };
     console.log(newPost);
     // Add post via addPost action
