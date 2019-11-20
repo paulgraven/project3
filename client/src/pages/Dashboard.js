@@ -8,7 +8,7 @@
 import React, {useEffect, Fragment } from 'react';
 import propTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { getCurrentProfile, getUserLikes } from '../actions/DashAction'
+import { getCurrentProfile, getUserLikes } from '../actions/Action'
 
 const Dashboard =({getCurrentProfile, getUserLikes,
   isAuthenticated,
