@@ -9,7 +9,7 @@ const auth = require("../../middleware/auth");
 const User = require("../../models/User");
 
 router.get("/api/posts/user", auth, async(req,res)=>{
-    const user = await User.findById(req, user.id);
+    const User = await user.findById(req, user.id);
     try {
         const myPost ={
             country: req.body.country,

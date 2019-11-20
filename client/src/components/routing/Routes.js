@@ -4,8 +4,9 @@ import { Route, Switch } from "react-router-dom";
 
 //import homepage components
 import Home from "../../pages/Home";
-//import userdash components
 import Dashboard from "../../pages/Dashboard";
+//import userdash components
+
 //import private route
 
 const Routes = () => {
@@ -13,6 +14,7 @@ const Routes = () => {
     <section className="container">
       <Switch>
         <Route exact path="/" component={Home} />
+        <Route exact path="/Dashboard" component={Dashboard} />
       </Switch>
     </section>
   );

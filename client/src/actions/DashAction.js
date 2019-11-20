@@ -18,10 +18,10 @@ import { tokenConfig } from "./authActions";
 //import {clearErrors} from "./errorActions"
 
 
-// should access post from a specific user based on login and user id 
-//need to change route after coding the actual get route for users --> me --> connect to users object 
-export const getCurrentProfile = user.id = () => async dispatch => {try {
-    const res = await axios.get(`/api/profile/${user.id}`);
+// should access post from a specific User based on login and User id 
+//need to change route after coding the actual get route for Users --> me --> connect to Users object 
+export const getCurrentProfile = () => async dispatch => {try {
+    const res = await axios.get(`/api/profile/me`);
 
     dispatch({
         type: DASH_LOADING,
@@ -35,8 +35,8 @@ export const getCurrentProfile = user.id = () => async dispatch => {try {
 }}
 
 
-export const getUserLikes= user.id = () => async dispatch => {try {
-    const res = await axios.get(`/api/profile/${user.id.like}`);
+export const getUserLikes = () => async dispatch => {try {
+    const res = await axios.get(`/api/profile/me/likes`);
 
     dispatch({
         type: DASH_LOADING,

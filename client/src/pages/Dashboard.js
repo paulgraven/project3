@@ -8,14 +8,13 @@
 import React, {useEffect, Fragment } from 'react';
 import propTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { getCurrentProfile, getUserLikes } from '../actions/Action'
+import { getCurrentProfile } from '../actions/DashAction'
 
 const Dashboard =({getCurrentProfile, getUserLikes,
   isAuthenticated,
   profile}) => {
   useEffect(() => {
   getCurrentProfile();
-  getUserLikes();
   }, [getCurrentProfile, getUserLikes] );
   return (
     <Fragment>
