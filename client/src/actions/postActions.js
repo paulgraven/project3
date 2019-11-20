@@ -1,4 +1,4 @@
-import axios from 'axios';
+import axios from "axios";
 
 import {
   ADD_POST,
@@ -8,16 +8,21 @@ import {
   GET_POST,
   POST_LOADING,
   DELETE_POST
-} from './types';
+} from "./types";
 
-import { tokenConfig } from './authActions';
-import { returnErrors } from './errorActions';
+import { tokenConfig } from "./authActions";
+import { returnErrors } from "./errorActions";
 
 // Add Post
 export const addPost = postData => (dispatch, getState) => {
+  // Headers
+
+  // Request body
+  // const postData = JSON.stringify({ country, city, photo, description });
+
   dispatch(clearErrors());
   axios
-    .post('/api/posts', postData, tokenConfig(getState))
+    .post("/api/posts", postData, tokenConfig(getState))
     .then(res =>
       dispatch({
         type: ADD_POST,
@@ -36,7 +41,7 @@ export const addPost = postData => (dispatch, getState) => {
 export const getPosts = () => dispatch => {
   dispatch(setPostLoading());
   axios
-    .get('/api/posts')
+    .get("/api/posts")
     .then(res =>
       dispatch({
         type: GET_POSTS,
