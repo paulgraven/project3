@@ -12,6 +12,7 @@ import Routes from "./components/routing/Routes";
 import AppNavbar from "./components/AppNavbar";
 import { Container } from "reactstrap";
 import PostModal from "./components/PostModal";
+import Dashboard from "./pages/Dashboard"
 
 // import './App.css';
 
@@ -29,6 +30,7 @@ class App extends Component {
             <PostModal />
             <Switch>
               <Route component={Routes} />
+              <Route exact path ="/dashboard" component={Dashboard} />
             </Switch>
           </Container>
         </Router>

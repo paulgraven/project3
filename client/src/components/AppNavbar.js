@@ -44,11 +44,11 @@ class AppNavbar extends Component {
           <Logout />
         </NavItem>
         <NavItem>
-          <NavLink
-            to="/"
+          <NavLink 
+            href="/Dashboard"
             className={
-              window.location.pathname === "/dashboard" ||
-              window.location.pathname === "/dashboard"
+              window.location.pathname === "Dashboard" ||
+              window.location.pathname === "Dashboard"
                 ? "nav-link active"
                 : "nav-link"
             }
