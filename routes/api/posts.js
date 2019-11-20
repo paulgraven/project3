@@ -19,6 +19,7 @@ router.get("/", (req, res) => {
 // @access  Private route, since we added "auth" as a second parameter; protected routes (need tokens)
 router.post("/", auth, (req, res) => {
   const newPost = new Post({
+    continent: req.body.continent,
     country: req.body.country,
     city: req.body.city,
     photo: req.body.photo,
