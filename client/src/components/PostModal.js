@@ -7,11 +7,7 @@ import {
   Form,
   FormGroup,
   Label,
-  Input,
-  ButtonDropdown,
-  DropdownToggle,
-  DropdownMenu,
-  DropdownItem
+  Input
 } from "reactstrap";
 import { connect } from "react-redux";
 import { addPost } from "../actions/postActions";
@@ -31,6 +27,7 @@ class PostModal extends Component {
 
   static propTypes = {
     auth: PropTypes.object.isRequired,
+    dropDown: PropTypes.object.isRequired,
     isAuthenticated: PropTypes.bool
   };
 
@@ -49,7 +46,9 @@ class PostModal extends Component {
     e.preventDefault();
 
     const newPost = {
-      continent: this.state.continent,
+      // continent: this.state.dropDownValue,
+      // continent: this.state.continent,
+      continent: "Africa",
       country: this.state.country,
       city: this.state.city,
       photo: this.state.photo,
@@ -84,9 +83,8 @@ class PostModal extends Component {
 
             <Form onSubmit={this.onSubmit}>
               <FormGroup>
-                <Label for="continent">Continent</Label>
                 <DropDown />
-
+                <br />
                 <br />
 
                 <Label for="country">Country</Label>
@@ -140,6 +138,7 @@ class PostModal extends Component {
 const mapStateToProps = state => ({
   post: state.post,
   auth: state.auth,
+  drop: state.dropDownValue,
   isAuthenticated: state.auth.isAuthenticated
 });
 
