@@ -16,7 +16,6 @@ import PropTypes from "prop-types";
 class PostModal extends Component {
   state = {
     modal: false,
-    id: "",
     city: "",
     country: "",
     photo: "",
@@ -51,8 +50,8 @@ class PostModal extends Component {
       user: this.props.auth.user
     };
 
-    console.log(newPost); // Add post via addPost action
-    this.props.addPost(newPost); // Close modal
+    console.log(newPost); // Add post via addPost action
+    this.props.addPost(newPost); // Close modal
     this.toggle();
   };
 
