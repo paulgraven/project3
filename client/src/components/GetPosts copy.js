@@ -24,6 +24,7 @@ import {
 import { connect } from "react-redux";
 import { addPost } from "../actions/postActions";
 import { getPost } from "../actions/postActions";
+import List from "./List"
 import PropTypes from "prop-types";
 
 const setPostLoading = () => {
@@ -33,6 +34,7 @@ const setPostLoading = () => {
 };
 
 class GetPosts extends Component {
+
   static propTypes = {
     auth: PropTypes.object.isRequired,
     isAuthenticated: PropTypes.bool
@@ -76,15 +78,13 @@ class GetPosts extends Component {
   // };
 
   render() {
-    const { isAuthenticated, user } = this.props.auth;
-
     return (
       <div>
-        <strong>{user ? `Welcome ${user.name}` : ""}</strong>
-        {this.props.isAuthenticated ? (
-          <div>
+        {/* {this.props.isAuthenticated ? (
+          <div> */}
             {this.state.posts.length ? (
-              <div>
+              // <div>
+              <List>
                 {this.state.posts.map(post => (
                   <div>
                     key={post._id}
@@ -95,15 +95,16 @@ class GetPosts extends Component {
                     description={post.description}
                   </div>
                 ))}
-              </div>
+                </List>
+              // </div>
             ) : (
               <h2 className="text-center">No posts have been made</h2>
             )}
           </div>
-        ) : (
-          <h4 className="mb-3 ml-4">Please log in to manage posts</h4>
-        )}
-      </div>
+        // ) : (
+        //   <h4 className="mb-3 ml-4">Please log in to manage posts</h4>
+        // )}
+      // </div>
     );
   }
 }
