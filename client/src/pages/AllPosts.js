@@ -1,3 +1,4 @@
+import "./../../src/App.css";
 import axios from "axios";
 import React, { Component } from "react";
 import PropTypes from "prop-types";
@@ -45,36 +46,36 @@ class GetPosts extends Component {
     return (
       <Container>
         {this.props.isAuthenticated ? (
-          <Row>
+          <div>
             {this.state.posts.length ? (
-              <Col>
+              <Row>
                 {this.state.posts.map(post => (
-                  <ul className="posts">
-                    <Card width="10px">
-                      {/* key={post._id} */}
-                      {/* user={post.user} */}
-                      {/* // authors={post.authors.join(", ")} */}
+                  // <ul className="posts">
+                  <Card className="card" width="10px">
+                    {/* key={post._id} */}
+                    {/* user={post.user} */}
+                    {/* // authors={post.authors.join(", ")} */}
 
-                      <CardHeader>
-                        {post.city}, {post.country}
-                      </CardHeader>
-                      <CardHeader>{post.continent}</CardHeader>
-                      <CardImg
-                        className="img-responsive"
-                        src={post.photo}
-                        alt="photo"
-                      ></CardImg>
+                    <CardHeader>
+                      {post.city}, {post.country}
+                    </CardHeader>
+                    <CardHeader>{post.continent}</CardHeader>
+                    <CardImg
+                      className="img-responsive"
+                      src={post.photo}
+                      alt="photo"
+                    ></CardImg>
 
-                      <CardText>{post.description}</CardText>
-                      <Button className="likebtn"></Button>
-                    </Card>
-                  </ul>
+                    <CardText className="cardText">{post.description}</CardText>
+                    <Button className="likebtn"></Button>
+                  </Card>
+                  // </ul>
                 ))}
-              </Col>
+              </Row>
             ) : (
               <h2 className="text-center">No posts have been made</h2>
             )}
-          </Row>
+          </div>
         ) : (
           <h4 className="mb-3 ml-4">Please log in to manage posts</h4>
         )}

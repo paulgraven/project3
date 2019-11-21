@@ -1,0 +1,23 @@
+.card {
+  width: 350px;
+  height: auto;
+  /* padding: 10px; */
+  margin: 10px;
+}
+
+.cardText {
+  padding: 10px;
+  vertical-align: bottom;
+}
+.img-responsive {
+  width: 300px;
+  height: auto;
+  padding: 10px;
+}
+
+.likebtn {
+  padding: 10px;
+  position: absolute;
+  top: 8px;
+  right: 16px;
+}
