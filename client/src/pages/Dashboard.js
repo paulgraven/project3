@@ -1,8 +1,8 @@
 
-// import { TabContent, TabPane, Nav, NavItem, NavLink, Button, CardTitle, CardText, Row, Col } from 'reactstrap';
-// import classnames from 'classnames';
+import { TabContent, TabPane, Nav, NavItem, NavLink, Button, CardTitle, CardText, Row, Col } from 'reactstrap';
+import classnames from 'classnames';
 // import AppNavbar from '../components/AppNavbar';
-// import Card from "../components/Cards/Cards"
+import Card from "../components/Cards/Cards"
 
 
 import React, {useEffect, Fragment } from 'react';
@@ -15,10 +15,20 @@ const Dashboard =({getCurrentProfile, getUserLikes,
   profile}) => {
   useEffect(() => {
   getCurrentProfile();
-  }, [getCurrentProfile, getUserLikes] );
+  }, 
+  [getCurrentProfile, getUserLikes] );
   return (
     <Fragment>
-    <div>Dashboard</div>
+    <div>
+      <Row>
+        <Col>
+          <Card />
+        </Col>
+        <Col>
+          <Card />
+        </Col>
+      </Row>
+    </div>
   </Fragment>
   );
 
@@ -40,4 +50,3 @@ const Dashboard =({getCurrentProfile, getUserLikes,
  });
 
  export default connect(mapStateToProps, { getCurrentProfile })(Dashboard);
-
