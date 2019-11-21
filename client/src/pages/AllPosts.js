@@ -2,9 +2,9 @@ import axios from "axios";
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
-import { getPost } from "../actions/postActions";
-import Cards from "./Cards/Cards";
-import List from "./List";
+import { getPost } from "./../actions/postActions";
+import Cards from "./../components/Cards/Cards"
+import List from "./../components/List";
 import {
   Container,
   Row,
