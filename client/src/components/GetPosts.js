@@ -139,7 +139,7 @@ class GetPosts extends Component {
                 ))}
               </div>
             ) : (
-              <h2 className="text-center">No Saved Books</h2>
+              <h2 className="text-center">No posts have been made</h2>
             )}
           </div>
         ) : (
