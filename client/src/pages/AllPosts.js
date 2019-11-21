@@ -3,7 +3,7 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { getPost } from "./../actions/postActions";
-import Cards from "./../components/Cards/Cards"
+import Cards from "./../components/Cards/Cards";
 import List from "./../components/List";
 import {
   Container,
@@ -43,32 +43,42 @@ class GetPosts extends Component {
 
   render() {
     return (
-      <Row>
+      <Container>
         {this.props.isAuthenticated ? (
-          <div>
+          <Row>
             {this.state.posts.length ? (
-              <div>
+              <Col>
                 {this.state.posts.map(post => (
-                  <div>
-                    key={post._id}
-                    user={post.user}
-                    country={post.country}
-                    country={post.country}
-                    city={post.city}
-                    photo={post.photo}
-                    {/* // authors={post.authors.join(", ")} */}
-                    description={post.description}
-                  </div>
+                  <ul className="posts">
+                    <Card width="10px">
+                      {/* key={post._id} */}
+                      {/* user={post.user} */}
+                      {/* // authors={post.authors.join(", ")} */}
+
+                      <CardHeader>
+                        {post.city}, {post.country}
+                      </CardHeader>
+                      <CardHeader>{post.continent}</CardHeader>
+                      <CardImg
+                        className="img-responsive"
+                        src={post.photo}
+                        alt="photo"
+                      ></CardImg>
+
+                      <CardText>{post.description}</CardText>
+                      <Button className="likebtn"></Button>
+                    </Card>
+                  </ul>
                 ))}
-              </div>
+              </Col>
             ) : (
               <h2 className="text-center">No posts have been made</h2>
             )}
-          </div>
+          </Row>
         ) : (
           <h4 className="mb-3 ml-4">Please log in to manage posts</h4>
         )}
-      </Row>
+      </Container>
     );
   }
 }

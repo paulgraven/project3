@@ -31,12 +31,13 @@ class App extends Component {
           <Container>
             <AppNavbar />
             <PostModal />
-            <GetPosts />
+            {/* <GetPosts /> */}
+            <AllPosts />
             <Cards />
             <Switch>
               <Route component={Routes} />
               <Route exact path ="/dashboard" component={Dashboard} />
-              <Route exact path ="/allPosts" component={AllPosts} />
+              {/* <Route exact path ="/allPosts" component={AllPosts} /> */}
             </Switch>
           </Container>
         </Router>
