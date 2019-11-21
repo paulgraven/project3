@@ -1,5 +1,7 @@
+import React, { Component } from "react";
 import axios from "axios";
-
+import { tokenConfig } from "./../actions/authActions";
+import { returnErrors } from "./../actions/errorActions";
 import {
   ADD_POST,
   GET_ERRORS,
@@ -9,11 +11,6 @@ import {
   POST_LOADING,
   DELETE_POST
 } from "./../actions/types";
-
-import { tokenConfig } from "./../actions/authActions";
-import { returnErrors } from "./../actions/errorActions";
-
-import React, { Component } from "react";
 import {
   Button,
   Modal,
@@ -27,9 +24,7 @@ import {
 import { connect } from "react-redux";
 import { addPost } from "../actions/postActions";
 import { getPost } from "../actions/postActions";
-
 import PropTypes from "prop-types";
-import DropDown from "./DropDown";
 
 const setPostLoading = () => {
   return {
@@ -38,50 +33,11 @@ const setPostLoading = () => {
 };
 
 class GetPosts extends Component {
-  // state = {
-  //   modal: false,
-  //   continent: "",
-  //   country: "",
-  //   city: "",
-  //   photo: "",
-  //   description: "",
-  //   user: ""
-  // };
 
   static propTypes = {
     auth: PropTypes.object.isRequired,
     isAuthenticated: PropTypes.bool
   };
-
-  // toggle = () => {
-  //   this.setState({
-  //     modal: !this.state.modal
-  //   });
-  // };
-
-  // onChange = e => {
-  //   console.log(e.target.name);
-  //   this.setState({ [e.target.name]: e.target.value });
-  // };
-
-  // onSubmit = e => {
-  //   e.preventDefault();
-
-  //   const newPost = {
-  //     // continent: this.state.dropDownValue,
-  //     // continent: this.state.continent,
-  //     continent: "Africa",
-  //     country: this.state.country,
-  //     city: this.state.city,
-  //     photo: this.state.photo,
-  //     description: this.state.description,
-  //     user: this.props.auth.user
-  //   };
-
-  //   console.log(newPost); // Add post via addPost action
-  //   this.props.addPost(newPost); // Close modal
-  //   this.toggle();
-  // };
 
   state = {
     posts: []
