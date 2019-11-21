@@ -27,7 +27,7 @@ class PostModal extends Component {
 
   static propTypes = {
     auth: PropTypes.object.isRequired,
-    dropDown: PropTypes.object.isRequired,
+    // dropDown: PropTypes.object.isRequired,
     isAuthenticated: PropTypes.bool
   };
 
@@ -138,7 +138,7 @@ class PostModal extends Component {
 const mapStateToProps = state => ({
   post: state.post,
   auth: state.auth,
-  drop: state.dropDownValue,
+  // drop: state.dropDownValue,
   isAuthenticated: state.auth.isAuthenticated
 });
 

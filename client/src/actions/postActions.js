@@ -38,10 +38,10 @@ export const addPost = postData => (dispatch, getState) => {
 };
 
 // Get Posts
-export const getPosts = () => dispatch => {
+export const getPosts = postData => (dispatch, getState) => {
   dispatch(setPostLoading());
   axios
-    .get("/api/posts")
+    .get("/api/posts", postData, tokenConfig(getState))
     .then(res =>
       dispatch({
         type: GET_POSTS,
