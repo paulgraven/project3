@@ -12,13 +12,14 @@ import {
 import { connect } from "react-redux";
 import { addPost } from "../actions/postActions";
 import PropTypes from "prop-types";
+import DropDown from "../components/DropDown";
 
 class PostModal extends Component {
   state = {
     modal: false,
-    id: "",
-    city: "",
+    continent: "",
     country: "",
+    city: "",
     photo: "",
     description: "",
     user: ""
@@ -26,6 +27,7 @@ class PostModal extends Component {
 
   static propTypes = {
     auth: PropTypes.object.isRequired,
+    // dropDown: PropTypes.object.isRequired,
     isAuthenticated: PropTypes.bool
   };
 
@@ -44,15 +46,18 @@ class PostModal extends Component {
     e.preventDefault();
 
     const newPost = {
-      city: this.state.city,
+      // continent: this.state.dropDownValue,
+      // continent: this.state.continent,
+      continent: "Africa",
       country: this.state.country,
+      city: this.state.city,
       photo: this.state.photo,
       description: this.state.description,
       user: this.props.auth.user
     };
 
-    console.log(newPost); // Add post via addPost action
-    this.props.addPost(newPost); // Close modal
+    console.log(newPost); // Add post via addPost action
+    this.props.addPost(newPost); // Close modal
     this.toggle();
   };
 
@@ -75,8 +80,13 @@ class PostModal extends Component {
           <ModalHeader toggle={this.toggle}>Post a Trip!</ModalHeader>
           <ModalBody>
             <div id="user"></div>
+
             <Form onSubmit={this.onSubmit}>
               <FormGroup>
+                <DropDown />
+                <br />
+                <br />
+
                 <Label for="country">Country</Label>
                 <Input
                   type="text"
@@ -86,7 +96,6 @@ class PostModal extends Component {
                   onChange={this.onChange}
                 />
                 <br />
-
                 <Label for="city">City</Label>
                 <Input
                   type="text"
@@ -96,7 +105,6 @@ class PostModal extends Component {
                   onChange={this.onChange}
                 />
                 <br />
-
                 <Label for="photo">Photos</Label>
                 <Input
                   type="text"
@@ -106,7 +114,6 @@ class PostModal extends Component {
                   onChange={this.onChange}
                 />
                 <br />
-
                 <Label for="description">Description of trip</Label>
                 <Input
                   type="text"
@@ -116,7 +123,6 @@ class PostModal extends Component {
                   onChange={this.onChange}
                 />
                 <br />
-
                 <Button color="dark" style={{ marginTop: "2rem" }} block>
                   Click here to post your trip
                 </Button>
@@ -132,6 +138,7 @@ class PostModal extends Component {
 const mapStateToProps = state => ({
   post: state.post,
   auth: state.auth,
+  // drop: state.dropDownValue,
   isAuthenticated: state.auth.isAuthenticated
 });
 
