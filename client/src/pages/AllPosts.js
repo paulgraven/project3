@@ -4,8 +4,6 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { getPost } from "./../actions/postActions";
-import Cards from "./../components/Cards/Cards";
-import List from "./../components/List";
 import {
   Container,
   Row,
@@ -50,7 +48,6 @@ class GetPosts extends Component {
             {this.state.posts.length ? (
               <Row>
                 {this.state.posts.map(post => (
-                  // <ul className="posts">
                   <Card className="card" width="10px">
                     <CardHeader>
                       {post.city}, {post.country}
@@ -64,7 +61,6 @@ class GetPosts extends Component {
                     <CardText className="cardText">{post.description}</CardText>
                     <Button className="likebtn"></Button>
                   </Card>
-                  // </ul>
                 ))}
               </Row>
             ) : (
@@ -72,7 +68,7 @@ class GetPosts extends Component {
             )}
           </div>
         ) : (
-          <h4 className="mb-3 ml-4">Please log in to manage posts</h4>
+          <h4 className="mb-3 ml-4"> </h4>
         )}
       </Container>
     );
