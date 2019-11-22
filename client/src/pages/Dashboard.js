@@ -25,7 +25,7 @@ class Dashboard extends Component {
 
   getPosts = () => {
     return axios
-      .get("/api/posts/User")
+      .get("/api/posts/user/_id")
       .then(res =>
         this.setState({
           posts: res.data.User
