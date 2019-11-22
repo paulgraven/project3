@@ -85,8 +85,6 @@ class PostModal extends Component {
             <Form onSubmit={this.onSubmit}>
               <FormGroup>
                 {/* <DropDown /> */}
-                <br />
-                <br />
 
                 <Label for="country">Country</Label>
                 <Input
