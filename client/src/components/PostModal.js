@@ -12,12 +12,12 @@ import {
 import { connect } from "react-redux";
 import { addPost } from "../actions/postActions";
 import PropTypes from "prop-types";
-import DropDown from "../components/DropDown";
+// import DropDown from "../components/DropDown";
 
 class PostModal extends Component {
   state = {
     modal: false,
-    continent: "",
+    // continent: "",
     country: "",
     city: "",
     photo: "",
@@ -48,7 +48,7 @@ class PostModal extends Component {
     const newPost = {
       // continent: this.state.dropDownValue,
       // continent: this.state.continent,
-      continent: "Africa",
+      // continent: "Africa",
       country: this.state.country,
       city: this.state.city,
       photo: this.state.photo,
@@ -59,6 +59,7 @@ class PostModal extends Component {
     console.log(newPost); // Add post via addPost action
     this.props.addPost(newPost); // Close modal
     this.toggle();
+    window.location.reload();
   };
 
   render() {
@@ -83,7 +84,7 @@ class PostModal extends Component {
 
             <Form onSubmit={this.onSubmit}>
               <FormGroup>
-                <DropDown />
+                {/* <DropDown /> */}
                 <br />
                 <br />
 
