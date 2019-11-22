@@ -3,8 +3,6 @@ import { Route, Switch } from "react-router-dom";
 //import auth components
 import Post from "../../../src/components/Post";
 
-//import homepage components
-import Home from "../../pages/home";
 //import userdash components
 import Dashboard from "../../pages/Dashboard";
 import AllPosts from "../../pages/AllPosts";
