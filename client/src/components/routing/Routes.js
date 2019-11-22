@@ -1,6 +1,7 @@
 import React from "react";
 import { Route, Switch } from "react-router-dom";
 //import auth components
+import Post from "../../../src/components/Post";
 
 //import homepage components
 import Home from "../../pages/Home";
@@ -16,6 +17,9 @@ const Routes = () => {
       <Switch>
         <Route exact path="/" component={Home} />
         <Route exact path="/Dashboard" component={Dashboard} />
+        {/* <Route exact path="/profile/:id" component={Dashboard} /> */}
+        <Route exact path="/post" component={Post} />
+
       </Switch>
     </section>
   );

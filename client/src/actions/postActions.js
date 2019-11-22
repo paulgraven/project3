@@ -11,10 +11,10 @@ import {
 } from "./types";
 
 import { tokenConfig } from "./authActions";
-// import { returnErrors } from "./errorActions";
+import { returnErrors } from "./errorActions";
 
 // Add Post
-export const addPost = ({ id, postData }) => (dispatch, getState) => {
+export const addPost = postData => (dispatch, getState) => {
   // Headers
 
   // Request body
@@ -22,7 +22,7 @@ export const addPost = ({ id, postData }) => (dispatch, getState) => {
 
   dispatch(clearErrors());
   axios
-    .post(`/api/posts${id}`, postData, tokenConfig(getState))
+    .post("/api/posts", postData, tokenConfig(getState))
     .then(res =>
       dispatch({
         type: ADD_POST,
@@ -38,10 +38,10 @@ export const addPost = ({ id, postData }) => (dispatch, getState) => {
 };
 
 // Get Posts
-export const getPosts = () => dispatch => {
+export const getPosts = postData => (dispatch, getState) => {
   dispatch(setPostLoading());
   axios
-    .get("/api/posts")
+    .get("/api/posts", postData, tokenConfig(getState))
     .then(res =>
       dispatch({
         type: GET_POSTS,
