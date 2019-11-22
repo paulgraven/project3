@@ -12,9 +12,8 @@ import Routes from "./components/routing/Routes";
 import AppNavbar from "./components/AppNavbar";
 import { Container } from "reactstrap";
 import PostModal from "./components/PostModal";
-import Dashboard from "./pages/Dashboard"
-import AllPosts from "./pages/AllPosts"
-import GetPosts from "./components/GetPosts";
+import Dashboard from "./pages/Dashboard";
+import AllPosts from "./pages/AllPosts";
 import Cards from "./components/Cards/Cards";
 
 // import './App.css';
@@ -32,12 +31,11 @@ class App extends Component {
             <AppNavbar />
             <PostModal />
             {/* <GetPosts /> */}
-            <AllPosts />
-            <Cards />
+
             <Switch>
               <Route component={Routes} />
-              <Route exact path ="/dashboard" component={Dashboard} />
-              {/* <Route exact path ="/allPosts" component={AllPosts} /> */}
+              <Route exact path="/dashboard" component={Dashboard} />
+              <Route exact path="/allPosts" component={AllPosts} />
             </Switch>
           </Container>
         </Router>
