@@ -52,10 +52,6 @@ class GetPosts extends Component {
                 {this.state.posts.map(post => (
                   // <ul className="posts">
                   <Card className="card" width="10px">
-                    {/* key={post._id} */}
-                    {/* user={post.user} */}
-                    {/* // authors={post.authors.join(", ")} */}
-
                     <CardHeader>
                       {post.city}, {post.country}
                     </CardHeader>
@@ -65,7 +61,6 @@ class GetPosts extends Component {
                       src={post.photo}
                       alt="photo"
                     ></CardImg>
-
                     <CardText className="cardText">{post.description}</CardText>
                     <Button className="likebtn"></Button>
                   </Card>
