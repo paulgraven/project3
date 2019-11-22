@@ -34,8 +34,8 @@ class App extends Component {
 
             <Switch>
               <Route component={Routes} />
-              <Route exact path="/dashboard" component={Dashboard} />
               <Route exact path="/allPosts" component={AllPosts} />
+              <Route exact path="/Dashboard" component={Dashboard} />
             </Switch>
           </Container>
         </Router>
