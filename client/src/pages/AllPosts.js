@@ -52,7 +52,7 @@ class GetPosts extends Component {
                     <CardHeader>
                       {post.city}, {post.country}
                     </CardHeader>
-                    <CardHeader>{post.continent}</CardHeader>
+                    {/* <CardHeader>{post.continent}</CardHeader> */}
                     <CardImg
                       className="img-responsive"
                       src={post.photo}
