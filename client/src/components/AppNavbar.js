@@ -44,7 +44,7 @@ class AppNavbar extends Component {
           <Logout />
         </NavItem>
         <NavItem>
-          <NavLink 
+          <NavLink
             href="/Dashboard"
             className={
               window.location.pathname === "Dashboard" ||
@@ -72,9 +72,11 @@ class AppNavbar extends Component {
 
     return (
       <div>
-        <Navbar color="dark" dark expand="sm" className="mb-5">
+        <Navbar expand="sm" className="navband">
           <Container>
-            <NavbarBrand href="/">Tribe</NavbarBrand>
+            <NavbarBrand className="tribe" href="/">
+              Tribe
+            </NavbarBrand>
             <NavbarToggler onClick={this.toggle} />
             <Collapse isOpen={this.state.isOpen} navbar>
               <Nav className="ml-auto" navbar>

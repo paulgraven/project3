@@ -3,7 +3,7 @@ import axios from "axios";
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
-import { getPost } from "./../actions/postActions";
+import { getPost, addLike, removeLike } from "./../actions/postActions";
 import {
   Container,
   Row,
@@ -48,8 +48,8 @@ class GetPosts extends Component {
             {this.state.posts.length ? (
               <Row>
                 {this.state.posts.map(post => (
-                  <Card className="card" width="10px">
-                    <CardHeader>
+                  <Card className="card">
+                    <CardHeader className="CardHeader">
                       {post.city}, {post.country}
                     </CardHeader>
                     {/* <CardHeader>{post.continent}</CardHeader> */}
@@ -59,7 +59,9 @@ class GetPosts extends Component {
                       alt="photo"
                     ></CardImg>
                     <CardText className="cardText">{post.description}</CardText>
-                    <Button className="likebtn"></Button>
+                    <Button onClick={e => addLike(post.id)} className="likebtn">
+                      <i class="fas fa-plane"></i>
+                    </Button>
                   </Card>
                 ))}
               </Row>
@@ -81,4 +83,6 @@ const mapStateToProps = state => ({
   isAuthenticated: state.auth.isAuthenticated
 });
 
-export default connect(mapStateToProps, { getPost })(GetPosts);
+export default connect(mapStateToProps, { getPost, addLike, removeLike })(
+  GetPosts
+);

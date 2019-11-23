@@ -12,12 +12,12 @@ import {
 import { connect } from "react-redux";
 import { addPost } from "../actions/postActions";
 import PropTypes from "prop-types";
-// import DropDown from "../components/DropDown";
+import DropDown from "../components/DropDown";
 
 class PostModal extends Component {
   state = {
     modal: false,
-    // continent: "",
+    continent: "",
     country: "",
     city: "",
     photo: "",
@@ -48,7 +48,7 @@ class PostModal extends Component {
     const newPost = {
       // continent: this.state.dropDownValue,
       // continent: this.state.continent,
-      // continent: "Africa",
+      continent: "Africa",
       country: this.state.country,
       city: this.state.city,
       photo: this.state.photo,
@@ -59,7 +59,9 @@ class PostModal extends Component {
     console.log(newPost); // Add post via addPost action
     this.props.addPost(newPost); // Close modal
     this.toggle();
-    window.location.reload();
+    alert(
+      "Thank you for your post. We just made a donation to thewaterproject.org on your behalf!”"
+    );
   };
 
   render() {
@@ -67,11 +69,12 @@ class PostModal extends Component {
       <div>
         {this.props.isAuthenticated ? (
           <Button
-            color="dark"
-            style={{ marginBottom: "2rem" }}
+            className="addPostButton"
+            color="light"
+            style={{ margin: "1rem" }}
             onClick={this.toggle}
           >
-            Add Post
+            <i class="fas fa-globe"></i>
           </Button>
         ) : (
           <h4 className="mb-3 ml-4">Please log in to manage posts</h4>
@@ -84,7 +87,9 @@ class PostModal extends Component {
 
             <Form onSubmit={this.onSubmit}>
               <FormGroup>
-                {/* <DropDown /> */}
+                <DropDown />
+                <br />
+                <br />
 
                 <Label for="country">Country</Label>
                 <Input

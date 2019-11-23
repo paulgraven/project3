@@ -14,21 +14,17 @@ import {
   CardImg,
   Button
 } from "reactstrap";
-
 class GetPosts extends Component {
   static propTypes = {
     auth: PropTypes.object.isRequired,
     isAuthenticated: PropTypes.bool
   };
-
   state = {
     posts: []
   };
-
   componentDidMount() {
     this.getPosts();
   }
-
   getPosts = () => {
     return axios
       .get("/api/posts")
@@ -39,10 +35,8 @@ class GetPosts extends Component {
       })
       .catch(err => console.log(err));
   };
-
   render() {
     const { isAuthenticated, user } = this.props.auth;
-
     return (
       <Container>
         {this.props.isAuthenticated ? (
@@ -82,11 +76,9 @@ class GetPosts extends Component {
     );
   }
 }
-
 const mapStateToProps = state => ({
   post: state.post,
   auth: state.auth,
   isAuthenticated: state.auth.isAuthenticated
 });
-
 export default connect(mapStateToProps, { getPost })(GetPosts);
