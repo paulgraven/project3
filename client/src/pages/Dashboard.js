@@ -47,7 +47,7 @@ class GetPosts extends Component {
                   if (post.user === user._id) {
                     return (
                       <Card className="card" width="10px">
-                        <CardHeader className="CardHeader">
+                        <CardHeader>
                           {post.city}, {post.country}
                         </CardHeader>
                         {/* <CardHeader>{post.continent}</CardHeader> */}
