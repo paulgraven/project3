@@ -7,10 +7,10 @@ const PostSchema = new Schema({
     type: Schema.Types.ObjectId,
     ref: "users"
   },
-  continent: {
-    required: true,
-    type: String
-  },
+  // continent: {
+  //   required: true,
+  //   type: String
+  // },
   city: {
     required: true,
     type: String
