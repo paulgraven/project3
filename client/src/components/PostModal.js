@@ -59,6 +59,9 @@ class PostModal extends Component {
     console.log(newPost); // Add post via addPost action
     this.props.addPost(newPost); // Close modal
     this.toggle();
+    alert(
+      "Thank you for your post. We just made a donation to thewaterproject.org on your behalf!”"
+    );
   };
 
   render() {
@@ -66,11 +69,12 @@ class PostModal extends Component {
       <div>
         {this.props.isAuthenticated ? (
           <Button
-            color="dark"
-            style={{ marginBottom: "2rem" }}
+            className="addPostButton"
+            color="light"
+            style={{ margin: "1rem" }}
             onClick={this.toggle}
           >
-            Add Post
+            <i class="fas fa-globe"></i>
           </Button>
         ) : (
           <h4 className="mb-3 ml-4">Please log in to manage posts</h4>

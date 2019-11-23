@@ -27,8 +27,8 @@ class App extends Component {
     return (
       <Provider store={store}>
         <Router>
+          <AppNavbar />
           <Container>
-            <AppNavbar />
             <PostModal />
             {/* <GetPosts /> */}
 

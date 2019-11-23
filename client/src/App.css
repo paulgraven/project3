@@ -1,8 +1,20 @@
+@import url("https://fonts.googleapis.com/css?family=Righteous&display=swap");
+
+body {
+  margin: 0;
+  padding: 0;
+  /* background-image: linear-gradient(-225deg, #f9fea5 10%, #20e2d7 100%); */
+  background-image: url("./img/IMG_0090.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 .card {
-  width: 350px;
+  width: 320px;
   height: auto;
   /* padding: 10px; */
-  margin: 10px;
+  margin-right: 20px;
+  margin-left: 20px;
+  margin-bottom: 20px;
 }
 
 .cardText {
@@ -10,14 +22,31 @@
   vertical-align: bottom;
 }
 .img-responsive {
-  width: 300px;
+  width: 290;
   height: auto;
   padding: 10px;
 }
 
 .likebtn {
-  padding: 10px;
+  padding: 5px;
   position: absolute;
   top: 8px;
   right: 16px;
+  background-color: #12183d;
+}
+.CardHeader {
+  font-weight: bold;
+}
+.addPostButton {
+  border-radius: 50px;
+  font-size: x-large;
+  margin-bottom: "2rem";
+}
+.tribe {
+  font-family: "Righteous", cursive;
+  font-size: xx-large;
+  text-shadow: 0 0 25px #ff005b;
+}
+.navband {
+  background-color: wheat;
 }
