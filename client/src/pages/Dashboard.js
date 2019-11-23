@@ -59,7 +59,9 @@ class GetPosts extends Component {
                         <CardText className="cardText">
                           {post.description}
                         </CardText>
-                        <Button className="likebtn"></Button>
+                        <Button className="likebtn">
+                          <i class="fas fa-plane"></i>
+                        </Button>
                       </Card>
                     );
                   }

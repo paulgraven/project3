@@ -21,7 +21,7 @@ import { tokenConfig } from "./authActions";
 // should access post from a specific User based on login and User id 
 //need to change route after coding the actual get route for Users --> me --> connect to Users object 
 export const getCurrentProfile = () => async dispatch => {try {
-    const res = await axios.get(`/api/posts/user/_id`);
+    const res = await axios.get(`/api/profile/me`);
 
     dispatch({
         type: DASH_LOADING,
