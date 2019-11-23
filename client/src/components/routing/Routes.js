@@ -3,7 +3,6 @@ import { Route, Switch } from "react-router-dom";
 //import auth components
 import Post from "../../../src/components/Post";
 
-//import homepage components
 //import userdash components
 import Dashboard from "../../pages/Dashboard";
 import AllPosts from "../../pages/AllPosts";
@@ -18,8 +17,7 @@ const Routes = () => {
         <Route exact path="/" component={AllPosts} />
         <Route exact path="/Dashboard" component={Dashboard} />
         {/* <Route exact path="/profile/:id" component={Dashboard} /> */}
-      
-
+        {/* <Route exact path="/post" component={Post} /> */}
       </Switch>
     </section>
   );

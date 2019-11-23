@@ -26,57 +26,54 @@ class GetPosts extends Component {
   };
 
   componentDidMount() {
-    this.getPosts();
+    this.getPostsbyUser();
   }
 
-  getPosts = () => {
+  getPostsbyUser = () => {
     return axios
-      .get("/api/posts")
-      .then(res => {
+      .get("/api/posts/user")
+      .then(res =>
         this.setState({
           posts: res.data
-        });
-      })
+        })
+      )
       .catch(err => console.log(err));
   };
 
   render() {
-    const { isAuthenticated, user } = this.props.auth;
-
     return (
       <Container>
         {this.props.isAuthenticated ? (
           <div>
             {this.state.posts.length ? (
               <Row>
-                {this.state.posts.map(post => {
-                  if (post.user === user._id) {
-                    return (
-                      <Card className="card" width="10px">
-                        <CardHeader>
-                          {post.city}, {post.country}
-                        </CardHeader>
-                        {/* <CardHeader>{post.continent}</CardHeader> */}
-                        <CardImg
-                          className="img-responsive"
-                          src={post.photo}
-                          alt="photo"
-                        ></CardImg>
-                        <CardText className="cardText">
-                          {post.description}
-                        </CardText>
-                        <Button className="likebtn"></Button>
-                      </Card>
-                    );
-                  }
-                })}
+                {this.state.posts.map(post => (
+                  // <ul className="posts">
+
+                  <Card className="card" width="10px" key={post._id}>
+                    {/* user={post.user} */}
+                    {/* // authors={post.authors.join(", ")} */}
+                    <CardHeader>
+                      {post.city}, {post.country}
+                    </CardHeader>
+                    <CardHeader>{post.continent}</CardHeader>
+                    <CardImg
+                      className="img-responsive"
+                      src={post.photo}
+                      alt="photo"
+                    ></CardImg>
+                    <CardText className="cardText">{post.description}</CardText>
+                    <Button className="likebtn"></Button>
+                  </Card>
+                  // </ul>
+                ))}
               </Row>
             ) : (
               <h2 className="text-center">No posts have been made</h2>
             )}
           </div>
         ) : (
-          <h4 className="mb-3 ml-4"> </h4>
+          <h4 className="mb-3 ml-4">Please log in to manage posts</h4>
         )}
       </Container>
     );

@@ -7,7 +7,8 @@ import {
   GET_POSTS,
   GET_POST,
   POST_LOADING,
-  DELETE_POST
+  DELETE_POST,
+  UPDATE_LIKES
 } from "./types";
 
 import { tokenConfig } from "./authActions";
